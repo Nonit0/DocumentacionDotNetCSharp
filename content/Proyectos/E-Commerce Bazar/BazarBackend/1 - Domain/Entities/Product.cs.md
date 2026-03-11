@@ -10,10 +10,20 @@ draft: false
 public class Product : BaseEntity
 {
     public string Name { get; set; }
-    public decimal Price { get; set; }
-    public int StockQuantity { get; set; }
-    public virtual Category Category { get; set; }
-    public virtual ICollection<ProductImage> Images { get; set; }
+	public string Description { get; set; }
+	public decimal Price { get; set; }
+	public int StockQuantity { get; set; }
+	public bool IsOnSale { get; set; } // oferta
+	public bool HasFreeShipping { get; set; } // envioGratis
+	
+	// Foreign Key
+	public Guid CategoryId { get; set; }
+	public virtual Category Category { get; set; }
+	
+	// Para las imágenes (podemos guardarlas como una tabla separada o JSON)
+	// Optamos por tabla separada para normalización
+	public virtual ICollection<ProductImage> Images { get; set; }
+
 }
 ```
 - **Análisis Técnico:**

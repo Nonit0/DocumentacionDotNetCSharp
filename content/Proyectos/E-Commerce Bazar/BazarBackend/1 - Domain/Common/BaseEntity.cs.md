@@ -1,6 +1,12 @@
 ---
-title: "BaseEntity" 
-tags: [csharp, dotnet, domain, architecture, base-class] 
+title: BaseEntity
+tags:
+  - csharp
+  - dotnet
+  - domain
+  - architecture
+  - base-class
+  - proyecto-bazar
 draft: false
 ---
 - **Resumen:** Clase abstracta de la que heredan todas las entidades del sistema, proporcionando propiedades comunes como ID y auditoría básica.

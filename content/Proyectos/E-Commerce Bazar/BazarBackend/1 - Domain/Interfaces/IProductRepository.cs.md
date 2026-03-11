@@ -10,8 +10,10 @@ draft: false
 public interface IProductRepository
 {
     Task<IEnumerable<Product>> GetAllWithImagesAsync();
-    Task<Product> GetByIdAsync(Guid id);
-    Task<Product> AddAsync(Product product);
+	Task<Product> GetByIdAsync(Guid id);
+	Task<Product> AddAsync(Product product);
+	Task<Product> UpdateAsync(Product product);
+	Task DeleteAsync(Guid id);
 }
 ```
 - **Análisis Técnico:**

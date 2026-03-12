@@ -53,7 +53,7 @@ var pares = valores.Where(x => x % 2 == 0).ToList();
 > [!info]- Ventajas de usar LINQ y Expresiones Lambda
 > Como se puede comprobar, la lectura es mucho más clara, por lo que ganamos en mantenibilidad del código.
 > 
-> Todas estas operaciones las vamos a conseguir muy fácilmente gracias a los métodos de extensión para colecciones que nos ofrece el espacio de nombres `System.Linq` y a las expresiones lambda.**
+> Todas estas operaciones las vamos a conseguir muy fácilmente gracias a los métodos de extensión para colecciones que nos ofrece el espacio de nombres "[System.Linq](https://docs.microsoft.com/es-es/dotnet/api/system.LINQ?view=netframework-4.8)" y a las "**expresiones [lambda](https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)**".
 
 Seguramente te hayas fijado en el `ToList()` del segundo caso. Esto es porque LINQ siempre nos va a devolver un objeto de tipo `IEnumerable<T>`, el cual debemos iterar. **Hasta que no lo iteremos, la consulta no se ha ejecutado todavía, y solo tenemos una expresión sobre una colección**, por eso invocamos `ToList()` para forzar la ejecución de la consulta.
 
@@ -143,7 +143,7 @@ var alumnos = new List<Alumno>
    > ```
 
 9. **Sintaxis integrada (Query Syntax)**
-> [!example]- Expandir detalle y código
+   >[!example]- Expandir detalle y código
 > Aunque en los ejemplos anteriores hemos visto el uso directo de los métodos de extensión (Fluent Syntax), otra de las grandes ventajas que tiene LINQ es que permite crear expresiones directamente en el código de manera similar a si escribiésemos SQL directamente en C#.
 > 
 > ```csharp

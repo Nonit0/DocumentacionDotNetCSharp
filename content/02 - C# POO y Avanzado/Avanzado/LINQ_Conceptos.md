@@ -143,7 +143,8 @@ var alumnos = new List<Alumno>
    > ```
 
 9. **Sintaxis integrada (Query Syntax)**
-   > [!example]- Expandir detalle y código
+
+> [!example]- Expandir detalle y código
 > Aunque en los ejemplos anteriores hemos visto el uso directo de los métodos de extensión (Fluent Syntax), otra de las grandes ventajas que tiene LINQ es que permite crear expresiones directamente en el código de manera similar a si escribiésemos SQL directamente en C#.
 > 
 > ```csharp

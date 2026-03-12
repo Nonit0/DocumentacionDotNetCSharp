@@ -154,3 +154,14 @@ var alumnos = new List<Alumno>
 > ```
 > 
 > Esto nos devolverá la lista de alumnos que tienen una nota superior o igual a 5, ordenados por nota ascendentemente. ¿No es algo casi mágico?
+
+---
+## Ventajas y Desventajas
+Ahora que hemos visto un poco por dónde pisamos, es hora de hablar sobre lo que nos aporta utilizar LINQ frente a la iteración tradicional de colecciones.
+
+* **Desventaja (Rendimiento):** La principal (y casi única) desventaja es que LINQ añade una ligera sobrecarga, haciéndolo un poco más lento que usar bucles `for` o `foreach` puros para iterar la colección. Por supuesto, esto no es apreciable en prácticamente ninguna situación convencional, pero en entornos críticos donde cada milisegundo cuenta, debes conocer que tiene un impacto. 
+* **Ventaja (Legibilidad):** El código es mucho más legible y limpio, ya que utiliza una sintaxis muy declarativa (dices *qué* quieres obtener, no *cómo* lo vas a buscar paso a paso). 
+* **Ventaja (Acceso Unificado a Datos):** Nos ofrece una manera estandarizada de consultar datos, sin importar su origen o tipo. Podemos utilizar LINQ para trabajar con bases de datos (LINQ to Entities), con XML (LINQ to XML), con objetos en memoria (LINQ to Objects), ¡y hasta con APIs de terceros como [Twitter](https://github.com/JoeMayo/LINQToTwitter)!
+## Resumiendo
+- Pese a que en esta nota solo hemos hecho una pequeña introducción con las extensiones más frecuentes de LINQ (créeme que es una lista muy pequeña... te recomiendo explorar el espacio de nombres `System.Linq` para ver todas sus opciones), es una **herramienta increíblemente potente**. Tanto, que otros lenguajes de programación han implementado características similares. 
+- Si bien es cierto que existe una merma de rendimiento respecto a iterar el bucle directamente, el rendimiento "perdido" en el 99,99% de los casos se compensa con creces con el beneficio que aporta tener un código claro, legible y altamente mantenible.

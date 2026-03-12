@@ -58,7 +58,7 @@ var pares = valores.Where(x => x % 2 == 0).ToList();
 Seguramente te hayas fijado en el `ToList()` del segundo caso. Esto es porque LINQ siempre nos va a devolver un objeto de tipo `IEnumerable<T>`, el cual debemos iterar. **Hasta que no lo iteremos, la consulta no se ha ejecutado todavía, y solo tenemos una expresión sobre una colección**, por eso invocamos `ToList()` para forzar la ejecución de la consulta.
 
 >[!info]- Mas sobre consultas
-Sobre la ejecución diferida de consultas se puede hablar largo y tendido ya que es una materia en sí misma. Para más información puedes consultar este [enlace](https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/ef/language-reference/query-execution).
+> Sobre la ejecución diferida de consultas se puede hablar largo y tendido ya que es una materia en sí misma. Para más información puedes consultar este [enlace](https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/ef/language-reference/query-execution).
 
 ### **Ejemplos Reales**
 - Supongamos una clase:

@@ -1,0 +1,11 @@
+-  Añadir y definir correctamente las estructura vista-controlador
+	- Controller
+		- nombreTablaUsableController
+	- Service
+		- nombreTablaUsableService
+- Uso de DB Context con entity siempre para amyor mantenibilidad
+- debContext parciales (dos DB)
+	- DB base (sacaffold)
+	- DbIdentity (personalizada/ consultas internas)
+- Añadir Herramientas Microsoft Y entorno en el apartado 02
+- Configurar el start up, aqui va toda la configuracion necesaria de la app (COSRS, Encriptación, Servicios...)

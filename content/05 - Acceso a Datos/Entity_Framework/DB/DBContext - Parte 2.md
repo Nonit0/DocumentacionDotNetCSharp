@@ -1,0 +1,1 @@
+Crearemos un segundo DB, llamado IdentityDbContext donde configuramos con nuestras opciones extra con lo que necesites, permitiendo separar la base de los proyectos con las modificaciones necesarias unicas del nuevo proyecto

@@ -1,6 +1,10 @@
 ---
-title: "📝 Nota 1: 01 - C# Basico / Primera_Nota"
-tags: [csharp9, dotnet5/memoria, performance, basico]
+title: "📝 Nota 01: Value types y Reference Types"
+tags:
+  - csharp9
+  - dotnet5/memoria
+  - performance
+  - basico
 draft: false
 ---
 # Value Types vs Reference Types en C# 9

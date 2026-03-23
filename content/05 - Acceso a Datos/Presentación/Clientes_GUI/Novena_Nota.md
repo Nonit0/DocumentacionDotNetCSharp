@@ -11,7 +11,7 @@ draft: false
 
 ### Qué es y para qué sirve
 
-En una arquitectura Full Stack con Angular y.NET 5, el frontend actúa como un cliente completamente autónomo y sin estado (Stateless). Para consumir los endpoints protegidos, Angular debe incluir el token {{JWT}} en la cabecera `Authorization: Bearer <token>` de cada petición HTTP. En lugar de añadir este token manualmente en cada llamada de nuestros servicios (`HttpClient`), Angular nos proporciona los **HttpInterceptors**. Un interceptor es un middleware del lado del cliente que captura las peticiones salientes, las clona, les inyecta el token y las envía. También captura las respuestas entrantes mediante **RxJS** para gestionar errores globales (como un 401 Unauthorized).
+En una arquitectura Full Stack con Angular y.NET 5, el frontend actúa como un cliente completamente autónomo y sin estado (Stateless). Para consumir los endpoints protegidos, Angular debe incluir el token [[JWT_Fundamentos|JWT]] en la cabecera `Authorization: Bearer <token>` de cada petición HTTP. En lugar de añadir este token manualmente en cada llamada de nuestros servicios (`HttpClient`), Angular nos proporciona los **HttpInterceptors**. Un interceptor es un middleware del lado del cliente que captura las peticiones salientes, las clona, les inyecta el token y las envía. También captura las respuestas entrantes mediante **RxJS** para gestionar errores globales (como un 401 Unauthorized).
 
 ### Cuándo usarlo en proyectos reales
 

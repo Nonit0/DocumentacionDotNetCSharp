@@ -13,7 +13,7 @@ draft: false
 
 ### Qué es y para qué sirve
 
-En sistemas empresariales, casi todas las tablas de la base de datos necesitan un rastro de auditoría: saber _cuándo_ se creó un registro, _quién_ lo creó, _cuándo_ se modificó por última vez y _quién_ lo modificó. En lugar de repetir estas cuatro propiedades (`CreatedAt`, `CreatedBy`, `ModifiedAt`, `ModifiedBy`) en cada una de las clases de tu dominio (violando el principio DRY - _Don't Repeat Yourself_), creamos una **Clase Base Abstracta**. Todas las entidades de nuestro dominio heredarán de ella. En el ecosistema Java (Hibernate) esto es similar a usar `@MappedSuperclass` con `@EntityListeners`. En C# y.NET 5, lo resolvemos interceptando el momento de guardado en el ORM ({{Entity Framework}}).
+En sistemas empresariales, casi todas las tablas de la base de datos necesitan un rastro de auditoría: saber _cuándo_ se creó un registro, _quién_ lo creó, _cuándo_ se modificó por última vez y _quién_ lo modificó. En lugar de repetir estas cuatro propiedades (`CreatedAt`, `CreatedBy`, `ModifiedAt`, `ModifiedBy`) en cada una de las clases de tu dominio (violando el principio DRY - _Don't Repeat Yourself_), creamos una **Clase Base Abstracta**. Todas las entidades de nuestro dominio heredarán de ella. En el ecosistema Java (Hibernate) esto es similar a usar `@MappedSuperclass` con `@EntityListeners`. En C# y.NET 5, lo resolvemos interceptando el momento de guardado en el ORM ([[Entity Framework]]).
 
 ### Cuándo usarlo en proyectos reales
 
@@ -21,14 +21,14 @@ Se utiliza por defecto en cualquier aplicación empresarial (como tu _E-Commerce
 
 ### Buenas prácticas
 
-- **Aislamiento de la Identidad:** La entidad base no debe saber de dónde viene el usuario. En lugar de acoplar la clase directamente a la sesión web HTTP, inyectamos una interfaz como `ICurrentUserService` en el `DbContext` para que nos devuelva el ID del usuario extraído del {{JWT}}.
+- **Aislamiento de la Identidad:** La entidad base no debe saber de dónde viene el usuario. En lugar de acoplar la clase directamente a la sesión web HTTP, inyectamos una interfaz como `ICurrentUserService` en el `DbContext` para que nos devuelva el ID del usuario extraído del [[JWT_Fundamentos|JWT]].
     
 - **Automatización en el DbContext:** La lógica para actualizar las fechas de modificación no se debe hacer a mano. Se debe sobrescribir el método `SaveChangesAsync()` del `BazarDbContext` para que.NET 5 inspeccione qué entidades han cambiado y actualice sus fechas automáticamente justo antes de generar el SQL.
     
 
 ### Errores comunes de juniors y cómo evitarlos
 
-**Error:** El desarrollador Junior asigna manualmente `entity.CreatedAt = DateTime.UtcNow;` y `entity.CreatedBy = userId;` dentro de cada uno de los métodos de sus {{Controladores y Servicios}}. **Consecuencia:** Código altamente repetitivo. Tarde o temprano, a un desarrollador se le olvidará asignar la fecha de modificación en un endpoint específico, corrompiendo la auditoría de la base de datos de forma silenciosa. **Solución:** Automatizarlo en la capa de Infraestructura, centralizando la responsabilidad en el `DbContext`.
+**Error:** El desarrollador Junior asigna manualmente `entity.CreatedAt = DateTime.UtcNow;` y `entity.CreatedBy = userId;` dentro de cada uno de los métodos de sus [[Controladores y Servicios]]. **Consecuencia:** Código altamente repetitivo. Tarde o temprano, a un desarrollador se le olvidará asignar la fecha de modificación en un endpoint específico, corrompiendo la auditoría de la base de datos de forma silenciosa. **Solución:** Automatizarlo en la capa de Infraestructura, centralizando la responsabilidad en el `DbContext`.
 
 ### Ejemplo de código: Implementación Limpia
 ```csharp

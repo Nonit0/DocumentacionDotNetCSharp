@@ -1,5 +1,5 @@
 ---
-title: "📝 Nota 01: Value types y Reference Types"
+title: "📝 Nota 07: Controladores,  Servicios y Arquitectura"
 tags:
   - csharp9
   - dotnet5/api
@@ -12,7 +12,7 @@ draft: false
 
 ### Qué es y para qué sirve
 
-En una {{Arquitectura Limpia}}, los controladores de ASP.NET Core (`ControllerBase`) residen estrictamente en la capa externa de **Presentación**. Su única responsabilidad es actuar como mecanismo de entrega (Delivery Mechanism): traducir peticiones HTTP, pasarlas al núcleo del sistema (la capa de Aplicación/Casos de Uso) y transformar el resultado en respuestas HTTP estandarizadas (200 OK, 400 Bad Request, 201 Created).
+En una [[Arquitectura Limpia]], los controladores de ASP.NET Core (`ControllerBase`) residen estrictamente en la capa externa de **Presentación**. Su única responsabilidad es actuar como mecanismo de entrega (Delivery Mechanism): traducir peticiones HTTP, pasarlas al núcleo del sistema (la capa de Aplicación/Casos de Uso) y transformar el resultado en respuestas HTTP estandarizadas (200 OK, 400 Bad Request, 201 Created).
 
 ### Cuándo usarlo en proyectos reales
 

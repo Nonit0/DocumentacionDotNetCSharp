@@ -18,7 +18,7 @@ CQRS (Command Query Responsibility Segregation) es un patrón arquitectónico qu
 
 ### Cuándo usarlo en proyectos reales
 
-En sistemas empresariales como {{E-Commerce Bazar}}, las exigencias de lectura y escritura son altamente asimétricas. Por ejemplo, leer el catálogo de productos requiere alta velocidad (potencialmente usando {{Dapper}} o Redis), mientras que procesar un pago y crear la orden requiere la protección transaccional estricta del ORM ({{Entity Framework}}).
+En sistemas empresariales como [[E-Commerce Bazar]], las exigencias de lectura y escritura son altamente asimétricas. Por ejemplo, leer el catálogo de productos requiere alta velocidad (potencialmente usando [[Dapper]] o Redis), mientras que procesar un pago y crear la orden requiere la protección transaccional estricta del ORM ([[Entity Framework]]).
 
 ### Buenas prácticas
 

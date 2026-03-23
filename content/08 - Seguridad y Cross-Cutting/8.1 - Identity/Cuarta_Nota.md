@@ -14,7 +14,7 @@ draft: false
 
 ### Qué es y para qué sirve
 
-ASP.NET Core Identity es el ecosistema nativo para gestionar membresías. Por defecto, acopla la autenticación a cookies. En arquitecturas modernas con frontend SPA en Angular, se disocia este comportamiento emitiendo JSON Web Tokens ({{JWT}}).
+ASP.NET Core Identity es el ecosistema nativo para gestionar membresías. Por defecto, acopla la autenticación a cookies. En arquitecturas modernas con frontend SPA en Angular, se disocia este comportamiento emitiendo JSON Web Tokens [[JWT_Fundamentos|JWT]]).
 
 Identity verifica credenciales de forma segura (con hashes como PBKDF2), y la API genera un token firmado que Angular adjuntará vía un HttpInterceptor.
 

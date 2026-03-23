@@ -16,14 +16,14 @@ draft: false
 
 En arquitecturas escalables, concentrar todas las tablas del sistema en un único ApplicationDbContext monolítico viola el principio de Responsabilidad Única. La solución profesional es usar múltiples DbContexts dentro de la misma base de datos MariaDB:
 
-1. IdentityContext (Custom DB para Seguridad): Gestiona exclusivamente la seguridad, usuarios y roles (esquema AspNet*). -> Ver {{DbContext_Identity_Seguridad}}
+1. IdentityContext (Custom DB para Seguridad): Gestiona exclusivamente la seguridad, usuarios y roles (esquema AspNet*). -> Ver [[DbContext_Identity_Seguridad]]
     
 2. BazarDbContext (DB del Core): Gestiona el núcleo del negocio puro: Productos, Órdenes, etc.
     
 
 ### Cuándo usarlo en proyectos reales
 
-Este patrón, alineado con los Bounded Contexts de {{Domain-Driven Design}}, permite realizar migraciones de seguridad sin afectar el catálogo comercial. Es el paso previo natural si la plataforma necesita evolucionar hacia microservicios en el futuro.
+Este patrón, alineado con los Bounded Contexts de [[Domain-Driven Design]], permite realizar migraciones de seguridad sin afectar el catálogo comercial. Es el paso previo natural si la plataforma necesita evolucionar hacia microservicios en el futuro.
 
 ### Buenas prácticas
 
@@ -35,7 +35,7 @@ Error: Intentar hacer un .Include() o un JOIN con LINQ cruzando un ApplicationUs
 
 Consecuencia: EF Core lanzará una excepción indicando que no puede traducir la consulta, ya que los DbContexts son entidades lógicas aisladas.
 
-Solución: Guardar el CustomerId como un simple string de 36 caracteres en el modelo de Órdenes y cruzar los datos en memoria en la capa de Casos de Uso (ver {{Patrón CQRS}}).
+Solución: Guardar el CustomerId como un simple string de 36 caracteres en el modelo de Órdenes y cruzar los datos en memoria en la capa de Casos de Uso (ver [[Patrón CQRS]]).
 
 ### Ejemplo de código: Aislamiento en Inyección de Dependencias (.NET 5)
 ```csharp
